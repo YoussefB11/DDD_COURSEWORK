@@ -1,1 +1,1 @@
-﻿Console.WriteLine("Test");
+﻿Console.WriteLine("Test for github");

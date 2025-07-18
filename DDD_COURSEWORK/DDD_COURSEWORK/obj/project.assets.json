@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kcitachi/Projects/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK.csproj",
+      "projectUniqueName": "/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK.csproj",
       "projectName": "DDD_COURSEWORK",
-      "projectPath": "/Users/kcitachi/Projects/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK.csproj",
+      "projectPath": "/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK.csproj",
       "packagesPath": "/Users/kcitachi/.nuget/packages/",
-      "outputPath": "/Users/kcitachi/Projects/DDD_COURSEWORK/DDD_COURSEWORK/obj/",
+      "outputPath": "/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kcitachi/.nuget/NuGet/NuGet.Config"
