@@ -5,7 +5,13 @@
       "Name": "Youssef Baya",
       "SupervisorId": "ps001",
       "CheckIns": [],
-      "Meetings": []
+      "Meetings": [
+        {
+          "Date": "2025-07-28T11:00:00",
+          "With": "Peter Robinson",
+          "Notes": "(Requested by student)"
+        }
+      ]
     }
   ],
   "Supervisors": [

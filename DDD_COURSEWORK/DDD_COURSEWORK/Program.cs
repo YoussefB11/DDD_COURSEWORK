@@ -3,7 +3,7 @@ using DDD_COURSEWORK;
 
 class Program
 {
-    // Program.cs with empty switch logic
+    // Program.cs with empty switch logic (a case for every command or break when a command is unknown)
     static void Main(string[] args)
     {
         if (args.Length == 0)
@@ -40,6 +40,19 @@ class Program
                 else
                 {
                     Console.WriteLine("Usage: viewstudent <StudentID>");
+                }
+                break;
+
+            case "requestmeeting":
+                if (args.Length >= 3)
+                {
+                    string studentId = args[1];
+                    string dateStr = string.Join(" ", args[2..]);
+                    RequestMeetingCommand(data, studentId, dateStr);
+                }
+                else
+                {
+                    Console.WriteLine("Usage: requestmeeting <StudentID> <DateTime>");
                 }
                 break;
 
@@ -106,6 +119,39 @@ class Program
             }
         }
     }
+
+    static void RequestMeetingCommand(SystemData data, string studentId, string dateStr)
+    {
+        var student = data.Students.Find(s => s.Id == studentId);
+        if (student == null)
+        {
+            Console.WriteLine("Student not found.");
+            return;
+        }
+
+        if (!DateTime.TryParse(dateStr, out DateTime meetingDate))
+        {
+            Console.WriteLine("Invalid date format. Try something like: 2025-07-23 10:00");
+            return;
+        }
+
+        var supervisor = data.Supervisors.Find(ps => ps.Id == student.SupervisorId);
+        if (supervisor == null)
+        {
+            Console.WriteLine("Supervisor not found.");
+            return;
+        }
+
+        student.Meetings.Add(new Meeting
+        {
+            Date = meetingDate,
+            With = supervisor.Name,
+            Notes = "(Requested by student)"
+        });
+
+        Console.WriteLine($"Meeting requested with {supervisor.Name} on {meetingDate:g}");
+    }
+
 
 
 }
