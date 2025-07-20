@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DDD_COURSEWORK;
 
 class Program
@@ -54,6 +55,26 @@ class Program
                 {
                     Console.WriteLine("Usage: requestmeeting <StudentID> <DateTime>");
                 }
+                break;
+
+
+            case "bookmeeting":
+                if (args.Length >= 4)
+                {
+                    string studentId = args[1];
+                    string dateStr = args[2];
+                    string notes = string.Join(" ", args[3..]);
+                    BookMeetingCommand(data, studentId, dateStr, notes);
+                }
+                else
+                {
+                    Console.WriteLine("Usage: bookmeeting <StudentID> <DateTime> <Notes>");
+                }
+                break;
+
+
+            case "viewsummary":
+                ViewSummaryCommand(data);
                 break;
 
 
@@ -153,5 +174,52 @@ class Program
     }
 
 
+    static void BookMeetingCommand(SystemData data, string studentId, string dateStr, string notes)
+    {
+        var student = data.Students.Find(s => s.Id == studentId);
+        if (student == null)
+        {
+            Console.WriteLine("Student not found.");
+            return;
+        }
+
+        if (!DateTime.TryParse(dateStr, out DateTime meetingDate))
+        {
+            Console.WriteLine("Invalid date format. Use something like: 2025-07-24 14:00");
+            return;
+        }
+
+        var supervisor = data.Supervisors.Find(ps => ps.Id == student.SupervisorId);
+        if (supervisor == null)
+        {
+            Console.WriteLine("Supervisor not found.");
+            return;
+        }
+
+        student.Meetings.Add(new Meeting
+        {
+            Date = meetingDate,
+            With = supervisor.Name,
+            Notes = notes
+        });
+
+        Console.WriteLine($"Meeting booked with {student.Name} on {meetingDate:g} with notes: {notes}");
+    }
+
+    static void ViewSummaryCommand(SystemData data)
+    {
+        foreach (var ps in data.Supervisors)
+        {
+            var students = data.Students.FindAll(s => s.SupervisorId == ps.Id);
+            int total = students.Count;
+            int withCheckIns = students.Count(s => s.CheckIns.Any());
+            int withMeetings = students.Count(s => s.Meetings.Any());
+
+            Console.WriteLine($"\nSupervisor: {ps.Name}");
+            Console.WriteLine($"- Students assigned: {total}");
+            Console.WriteLine($"- Students with check-ins: {withCheckIns}");
+            Console.WriteLine($"- Students with meetings: {withMeetings}");
+        }
+    }
 
 }
