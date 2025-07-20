@@ -1,11 +1,10 @@
 ﻿using System;
-namespace DDD_COURSEWORK
+namespace DDD_COURSEWORK.Models
 {
 	public class SeniorTutor
 	{
-		public SeniorTutor()
-		{
-		}
-	}
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
 }
 

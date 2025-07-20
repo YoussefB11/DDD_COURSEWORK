@@ -1,0 +1,37 @@
+{
+  "Students": [
+    {
+      "Id": "s001",
+      "Name": "Youssef Baya",
+      "SupervisorId": "ps001",
+      "CheckIns": [
+        {
+          "Date": "2025-07-20T19:29:36.633028+01:00",
+          "Message": "Feeling anxious and tired"
+        }
+      ],
+      "Meetings": [
+        {
+          "Date": "2025-07-23T10:00:00",
+          "With": "Peter Robinson",
+          "Notes": "(Requested by student)"
+        },
+        {
+          "Date": "2025-07-24T14:00:00",
+          "With": "Peter Robinson",
+          "Notes": "Discuss assignment resit"
+        }
+      ]
+    }
+  ],
+  "Supervisors": [
+    {
+      "Id": "ps001",
+      "Name": "Peter Robinson",
+      "AssignedStudentIds": [
+        "s001"
+      ]
+    }
+  ],
+  "SeniorTutor": {}
+}

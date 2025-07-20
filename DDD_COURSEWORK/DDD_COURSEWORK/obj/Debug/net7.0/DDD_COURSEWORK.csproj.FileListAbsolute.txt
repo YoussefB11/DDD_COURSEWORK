@@ -1,0 +1,15 @@
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/bin/Debug/net7.0/DDD_COURSEWORK
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/bin/Debug/net7.0/DDD_COURSEWORK.deps.json
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/bin/Debug/net7.0/DDD_COURSEWORK.runtimeconfig.json
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/bin/Debug/net7.0/DDD_COURSEWORK.dll
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/bin/Debug/net7.0/DDD_COURSEWORK.pdb
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/DDD_COURSEWORK.csproj.AssemblyReference.cache
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/DDD_COURSEWORK.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/DDD_COURSEWORK.AssemblyInfoInputs.cache
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/DDD_COURSEWORK.AssemblyInfo.cs
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/DDD_COURSEWORK.csproj.CoreCompileInputs.cache
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/DDD_COURSEWORK.dll
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/refint/DDD_COURSEWORK.dll
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/DDD_COURSEWORK.pdb
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/DDD_COURSEWORK.genruntimeconfig.cache
+/Users/kcitachi/Documents/DDD_COURSEWORK/DDD_COURSEWORK/DDD_COURSEWORK/obj/Debug/net7.0/ref/DDD_COURSEWORK.dll

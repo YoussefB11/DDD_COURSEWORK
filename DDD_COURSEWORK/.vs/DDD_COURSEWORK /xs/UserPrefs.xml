@@ -1,19 +1,28 @@
 ﻿<Properties StartupConfiguration="{9BF384E3-FEC6-4378-8102-C06BE7E96590}|Default">
-  <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/Program.cs">
-    <Files>
-      <File FileName="DDD_COURSEWORK/Program.cs" Line="1" Column="35" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__" />
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/Program.cs">
+    <Files>
+      <File FileName="DDD_COURSEWORK/Program.cs" Line="52" Column="19" />
+      <File FileName="DDD_COURSEWORK/Student.cs" />
+      <File FileName="DDD_COURSEWORK/CheckIn.cs" Line="5" Column="3" />
+      <File FileName="DDD_COURSEWORK/Meeting.cs" />
+      <File FileName="DDD_COURSEWORK/PersonalSupervisor.cs" />
+      <File FileName="DDD_COURSEWORK/SeniorTutor.cs" />
+      <File FileName="DDD_COURSEWORK/FileManager.cs" Line="22" Column="63" />
+      <File FileName="DDD_COURSEWORK/SystemData.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DDD_COURSEWORK " expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>

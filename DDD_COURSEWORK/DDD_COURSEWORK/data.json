@@ -1,0 +1,22 @@
+﻿{
+  "Students": [
+    {
+      "Id": "s001",
+      "Name": "Youssef Baya",
+      "SupervisorId": "ps001",
+      "CheckIns": [],
+      "Meetings": []
+    }
+  ],
+  "Supervisors": [
+    {
+      "Id": "ps001",
+      "Name": "Peter Robinson",
+      "AssignedStudentIds": [ "s001" ]
+    }
+  ],
+  "SeniorTutor": {
+    "Id": "st001",
+    "Name": "John Whelan"
+  }
+}
