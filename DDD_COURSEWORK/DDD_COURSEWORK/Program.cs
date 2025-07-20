@@ -31,6 +31,18 @@ class Program
                 }
                 break;
 
+            case "viewstudent":
+                if (args.Length >= 2)
+                {
+                    string studentId = args[1];
+                    ViewStudentCommand(data, studentId);
+                }
+                else
+                {
+                    Console.WriteLine("Usage: viewstudent <StudentID>");
+                }
+                break;
+
 
             default:
                 Console.WriteLine("Unknown command.");
@@ -58,6 +70,42 @@ class Program
         Console.WriteLine($"Check-in submitted for {student.Name}");
     }
 
+    static void ViewStudentCommand(SystemData data, string studentId)
+    {
+        var student = data.Students.Find(s => s.Id == studentId);
+        if (student == null)
+        {
+            Console.WriteLine("Student not found.");
+            return;
+        }
+
+        Console.WriteLine($"Name: {student.Name}");
+        Console.WriteLine("Check-Ins:");
+        if (student.CheckIns.Count == 0)
+        {
+            Console.WriteLine("- (none)");
+        }
+        else
+        {
+            foreach (var checkIn in student.CheckIns)
+            {
+                Console.WriteLine($"- [{checkIn.Date:yyyy-MM-dd}] {checkIn.Message}");
+            }
+        }
+
+        Console.WriteLine("Meetings:");
+        if (student.Meetings.Count == 0)
+        {
+            Console.WriteLine("- (none)");
+        }
+        else
+        {
+            foreach (var meeting in student.Meetings)
+            {
+                Console.WriteLine($"- [{meeting.Date:yyyy-MM-dd HH:mm}] With: {meeting.With} | Notes: {meeting.Notes}");
+            }
+        }
+    }
 
 
 }
