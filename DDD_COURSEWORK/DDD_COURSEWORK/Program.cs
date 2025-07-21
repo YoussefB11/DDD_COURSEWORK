@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using DDD_COURSEWORK;
+using DDD_COURSEWORK.Models;
 
 class Program
 {
@@ -9,9 +10,10 @@ class Program
     {
         if (args.Length == 0)
         {
-            Console.WriteLine("No command provided.");
+            RunInteractiveMenu();
             return;
         }
+
 
         var data = FileManager.LoadData();
 
@@ -85,6 +87,172 @@ class Program
 
         FileManager.SaveData(data);
     }
+
+    static void RunInteractiveMenu()
+    {
+        var data = FileManager.LoadData();
+
+        Console.WriteLine("-- Student Support System --");
+        Console.WriteLine("");
+        Console.WriteLine("Select your role: ");
+        Console.WriteLine("1. Student");
+        Console.WriteLine("2. Personal Supervisor");
+        Console.WriteLine("3. Senior Tutor");
+        Console.Write("Enter choice: ");
+
+        string choice = Console.ReadLine()?.Trim();
+
+        switch (choice)
+        {
+            case "1":
+                RunStudentMenu(data);
+                break;
+            case "2":
+                RunSupervisorMenu(data);
+                break;
+            case "3":
+                RunTutorMenu(data);
+                break;
+            default:
+                Console.WriteLine("Error");
+                break;
+        }
+
+        FileManager.SaveData(data);
+    }
+
+    static void RunStudentMenu(SystemData data)
+    {
+        Student student = null;
+        string studentId = "";
+
+        while (student == null)
+        {
+            Console.Write("Enter your Student ID: ");
+            studentId = Console.ReadLine()?.Trim();
+            student = data.Students.Find(s => s.Id == studentId);
+
+            if (student == null)
+            {
+                Console.WriteLine("Student not found so try again.");
+            }
+        }
+
+
+        while (true)
+        {
+            Console.WriteLine($"Student Menu for {student.Name}");
+            Console.WriteLine("1. Submit Check-In");
+            Console.WriteLine("2. Request Meeting");
+            Console.WriteLine("3. View My Info");
+            Console.WriteLine("0. Close");
+            Console.Write("Choice: ");
+            string input = Console.ReadLine()?.Trim();
+
+            switch (input)
+            {
+                case "1":
+                    Console.Write("Enter your check-in message: ");
+                    string message = Console.ReadLine();
+                    CheckInCommand(data, studentId, message);
+                    break;
+                case "2":
+                    Console.Write("Enter the meeting date/time (e.g. 2025-07-25 10:00): ");
+                    string dateStr = Console.ReadLine();
+                    RequestMeetingCommand(data, studentId, dateStr);
+                    break;
+                case "3":
+                    ViewStudentCommand(data, studentId);
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Invalid option.");
+                    break;
+            }
+        }
+    }
+
+
+    static void RunSupervisorMenu(SystemData data)
+    {
+        PersonalSupervisor supervisor = null;
+        string psId = "";
+
+        while (supervisor == null)
+        {
+            Console.Write("Enter your Supervisor ID: ");
+            psId = Console.ReadLine()?.Trim();
+            supervisor = data.Supervisors.Find(ps => ps.Id == psId);
+
+            if (supervisor == null)
+            {
+                Console.WriteLine("PS id not found sotry again.");
+            }
+        }
+
+
+        while (true)
+        {
+            Console.WriteLine($"Supervisor Menu for {supervisor.Name}");
+            Console.WriteLine("1. Book Meeting with Student");
+            Console.WriteLine("2. View Student Info");
+            Console.WriteLine("0. Close");
+            Console.Write("Choose: ");
+            string input = Console.ReadLine()?.Trim();
+
+            switch (input)
+            {
+                case "1":
+                    Console.Write("Enter Student ID: ");
+                    string studentId = Console.ReadLine();
+                    Console.Write("Enter meeting date/time: ");
+                    string dateStr = Console.ReadLine();
+                    Console.Write("Write a note: ");
+                    string notes = Console.ReadLine();
+                    BookMeetingCommand(data, studentId, dateStr, notes);
+                    break;
+                case "2":
+                    Console.Write("Enter Student ID: ");
+                    string viewId = Console.ReadLine();
+                    ViewStudentCommand(data, viewId);
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Inavlid option");
+                    break;
+            }
+        }
+    }
+
+
+    static void RunTutorMenu(SystemData data)
+    {
+        while (true)
+        {
+            Console.WriteLine("Senior Tutor Menu");
+            Console.WriteLine("1. View Supervisors/Students Engagements");
+            Console.WriteLine("0. Close");
+            Console.Write("Choice: ");
+            string input = Console.ReadLine()?.Trim();
+
+            switch (input)
+            {
+                case "1":
+                    ViewSummaryCommand(data);
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Invalid option  ");
+                    break;
+            }
+        }
+    }
+
+
+
 
     static void CheckInCommand(SystemData data, string studentId, string message)
     {

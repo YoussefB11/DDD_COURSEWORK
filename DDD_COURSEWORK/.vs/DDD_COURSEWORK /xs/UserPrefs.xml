@@ -1,27 +1,33 @@
 ﻿<Properties StartupConfiguration="{9BF384E3-FEC6-4378-8102-C06BE7E96590}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/SeniorTutor.cs">
-    <Files>
-      <File FileName="DDD_COURSEWORK/Program.cs" Line="84" Column="41" />
-      <File FileName="DDD_COURSEWORK/Student.cs" />
-      <File FileName="DDD_COURSEWORK/CheckIn.cs" Line="5" Column="3" />
-      <File FileName="DDD_COURSEWORK/Meeting.cs" />
-      <File FileName="DDD_COURSEWORK/PersonalSupervisor.cs" />
-      <File FileName="DDD_COURSEWORK/SeniorTutor.cs" Line="11" Column="1" />
-      <File FileName="DDD_COURSEWORK/FileManager.cs" Line="10" Column="40" />
-      <File FileName="DDD_COURSEWORK/SystemData.cs" />
-      <File FileName="DDD_COURSEWORK/data.json" Line="12" Column="6" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__" />
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/Student.cs">
+    <Files>
+      <File FileName="DDD_COURSEWORK/Program.cs" Line="186" Column="47" />
+      <File FileName="DDD_COURSEWORK/Student.cs" Line="11" Column="14" />
+      <File FileName="DDD_COURSEWORK/CheckIn.cs" Line="5" Column="3" />
+      <File FileName="DDD_COURSEWORK/Meeting.cs" Line="1" Column="1" />
+      <File FileName="DDD_COURSEWORK/PersonalSupervisor.cs" Line="1" Column="1" />
+      <File FileName="DDD_COURSEWORK/SeniorTutor.cs" Line="11" Column="1" />
+      <File FileName="DDD_COURSEWORK/FileManager.cs" Line="10" Column="40" />
+      <File FileName="DDD_COURSEWORK/SystemData.cs" Line="1" Column="1" />
+      <File FileName="DDD_COURSEWORK/data.json" Line="23" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DDD_COURSEWORK ">
+            <Node name="DDD_COURSEWORK">
+              <Node name="Student.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>
