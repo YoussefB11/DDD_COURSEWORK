@@ -4,16 +4,16 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/Student.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/Program.cs">
     <Files>
-      <File FileName="DDD_COURSEWORK/Program.cs" Line="186" Column="47" />
-      <File FileName="DDD_COURSEWORK/Student.cs" Line="11" Column="14" />
-      <File FileName="DDD_COURSEWORK/CheckIn.cs" Line="5" Column="3" />
-      <File FileName="DDD_COURSEWORK/Meeting.cs" Line="1" Column="1" />
-      <File FileName="DDD_COURSEWORK/PersonalSupervisor.cs" Line="1" Column="1" />
-      <File FileName="DDD_COURSEWORK/SeniorTutor.cs" Line="11" Column="1" />
-      <File FileName="DDD_COURSEWORK/FileManager.cs" Line="10" Column="40" />
-      <File FileName="DDD_COURSEWORK/SystemData.cs" Line="1" Column="1" />
+      <File FileName="DDD_COURSEWORK/Program.cs" Line="51" Column="41" />
+      <File FileName="DDD_COURSEWORK/Student.cs" Line="17" Column="1" />
+      <File FileName="DDD_COURSEWORK/CheckIn.cs" Line="5" Column="55" />
+      <File FileName="DDD_COURSEWORK/Meeting.cs" Line="9" Column="93" />
+      <File FileName="DDD_COURSEWORK/PersonalSupervisor.cs" Line="3" Column="32" />
+      <File FileName="DDD_COURSEWORK/SeniorTutor.cs" Line="3" Column="23" />
+      <File FileName="DDD_COURSEWORK/FileManager.cs" Line="14" Column="29" />
+      <File FileName="DDD_COURSEWORK/SystemData.cs" Line="14" Column="1" />
       <File FileName="DDD_COURSEWORK/data.json" Line="23" Column="1" />
     </Files>
     <Pads>
@@ -21,7 +21,7 @@
         <State name="__root__">
           <Node name="DDD_COURSEWORK ">
             <Node name="DDD_COURSEWORK">
-              <Node name="Student.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>

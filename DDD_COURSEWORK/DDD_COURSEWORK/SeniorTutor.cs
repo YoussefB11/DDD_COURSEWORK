@@ -1,10 +1,11 @@
 ﻿using System;
-namespace DDD_COURSEWORK.Models
+
+namespace DDD_COURSEWORK
 {
-	public class SeniorTutor
-	{
-        public string Id { get; set; }
-        public string Name { get; set; }
+    // This class represents the senior tutor who oversees all supervisors
+    public class SeniorTutor
+    {
+        public string Id { get; set; }    // Unique ID for the senior tutor
+        public string Name { get; set; }  // Full name of the senior tutor
     }
 }
-

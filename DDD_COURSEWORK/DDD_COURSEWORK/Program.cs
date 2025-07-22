@@ -1,31 +1,35 @@
-﻿using System;
+﻿/*
+Name: Youssef Baya
+Student ID: 202244950
+Module: Design develop deploy
+Coding language: C# (obviously)
+*/
+
+using System;
 using System.Linq;
 using DDD_COURSEWORK;
-using DDD_COURSEWORK.Models;
+
 
 class Program
 {
-    // Program.cs with empty switch logic (a case for every command or break when a command is unknown)
     static void Main(string[] args)
     {
-        if (args.Length == 0)
+        if (args.Length == 0) // if no command-line arguments, rnu the interactive menu instead
         {
             RunInteractiveMenu();
             return;
         }
 
-
-        var data = FileManager.LoadData();
-
-        string command = args[0].ToLower();
+        var data = FileManager.LoadData(); // load existing data from the data.json file
+        string command = args[0].ToLower(); // get the first command entered by the user
 
         switch (command)
         {
-            case "checkin":
+            case "checkin": // add a check-in message for a student
                 if (args.Length >= 3)
                 {
                     string studentId = args[1];
-                    string message = string.Join(" ", args[2..]);
+                    string message = string.Join(" ", args[2..]); // combine the message arguments
                     CheckInCommand(data, studentId, message);
                 }
                 else
@@ -34,7 +38,7 @@ class Program
                 }
                 break;
 
-            case "viewstudent":
+            case "viewstudent": // view a student check-ins and meetings
                 if (args.Length >= 2)
                 {
                     string studentId = args[1];
@@ -46,7 +50,7 @@ class Program
                 }
                 break;
 
-            case "requestmeeting":
+            case "requestmeeting": // Student asks to meet with supervisor
                 if (args.Length >= 3)
                 {
                     string studentId = args[1];
@@ -59,8 +63,7 @@ class Program
                 }
                 break;
 
-
-            case "bookmeeting":
+            case "bookmeeting": // Supervisor books a meeting with student
                 if (args.Length >= 4)
                 {
                     string studentId = args[1];
@@ -74,26 +77,23 @@ class Program
                 }
                 break;
 
-
-            case "viewsummary":
+            case "viewsummary": // Senior tutor views supervisor engagement
                 ViewSummaryCommand(data);
                 break;
 
-
             default:
-                Console.WriteLine("Unknown command.");
+                Console.WriteLine("Unknown command."); // print this error if cmd doesn't exist
                 break;
         }
 
-        FileManager.SaveData(data);
+        FileManager.SaveData(data); // Save everything at the end to the file
     }
 
     static void RunInteractiveMenu()
     {
-        var data = FileManager.LoadData();
+        var data = FileManager.LoadData(); // Load data from the data.sjon file
 
-        Console.WriteLine("-- Student Support System --");
-        Console.WriteLine("");
+        Console.WriteLine("-- Student Support System --\n");
         Console.WriteLine("Select your role: ");
         Console.WriteLine("1. Student");
         Console.WriteLine("2. Personal Supervisor");
@@ -105,20 +105,20 @@ class Program
         switch (choice)
         {
             case "1":
-                RunStudentMenu(data);
+                RunStudentMenu(data); // Show student options
                 break;
             case "2":
-                RunSupervisorMenu(data);
+                RunSupervisorMenu(data); // Show supervisor options
                 break;
             case "3":
-                RunTutorMenu(data);
+                RunTutorMenu(data); // Show tutor options (just one option technically)
                 break;
             default:
-                Console.WriteLine("Error");
+                Console.WriteLine("Error"); // error message
                 break;
         }
 
-        FileManager.SaveData(data);
+        FileManager.SaveData(data); // save 
     }
 
     static void RunStudentMenu(SystemData data)
@@ -126,6 +126,8 @@ class Program
         Student student = null;
         string studentId = "";
 
+        // keep asking until the student enters a valid student id (in this case the only valid id is s001 unless we add more data
+        // to the json file
         while (student == null)
         {
             Console.Write("Enter your Student ID: ");
@@ -138,8 +140,7 @@ class Program
             }
         }
 
-
-        while (true)
+        while (true) // prints the student menu
         {
             Console.WriteLine($"Student Menu for {student.Name}");
             Console.WriteLine("1. Submit Check-In");
@@ -154,18 +155,18 @@ class Program
                 case "1":
                     Console.Write("Enter your check-in message: ");
                     string message = Console.ReadLine();
-                    CheckInCommand(data, studentId, message);
+                    CheckInCommand(data, studentId, message); // save check-in
                     break;
                 case "2":
                     Console.Write("Enter the meeting date/time (e.g. 2025-07-25 10:00): ");
                     string dateStr = Console.ReadLine();
-                    RequestMeetingCommand(data, studentId, dateStr);
+                    RequestMeetingCommand(data, studentId, dateStr); // request meeting
                     break;
                 case "3":
-                    ViewStudentCommand(data, studentId);
+                    ViewStudentCommand(data, studentId); // show chekc-ins and meetings
                     break;
                 case "0":
-                    return;
+                    return; // exit
                 default:
                     Console.WriteLine("Invalid option.");
                     break;
@@ -173,12 +174,12 @@ class Program
         }
     }
 
-
     static void RunSupervisorMenu(SystemData data)
     {
         PersonalSupervisor supervisor = null;
         string psId = "";
 
+        // keep asking until a valid supervisor ID is entered
         while (supervisor == null)
         {
             Console.Write("Enter your Supervisor ID: ");
@@ -187,12 +188,11 @@ class Program
 
             if (supervisor == null)
             {
-                Console.WriteLine("PS id not found sotry again.");
+                Console.WriteLine("PS id not found so try again.");
             }
         }
 
-
-        while (true)
+        while (true) // shows the  supervisor menu
         {
             Console.WriteLine($"Supervisor Menu for {supervisor.Name}");
             Console.WriteLine("1. Book Meeting with Student");
@@ -210,26 +210,25 @@ class Program
                     string dateStr = Console.ReadLine();
                     Console.Write("Write a note: ");
                     string notes = Console.ReadLine();
-                    BookMeetingCommand(data, studentId, dateStr, notes);
+                    BookMeetingCommand(data, studentId, dateStr, notes); // book meeting
                     break;
                 case "2":
                     Console.Write("Enter Student ID: ");
                     string viewId = Console.ReadLine();
-                    ViewStudentCommand(data, viewId);
+                    ViewStudentCommand(data, viewId); // view a particular student info
                     break;
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("Inavlid option");
+                    Console.WriteLine("Invalid option");
                     break;
             }
         }
     }
 
-
     static void RunTutorMenu(SystemData data)
     {
-        while (true)
+        while (true) // seniro tutor can view the engagement between students and personal supervisors
         {
             Console.WriteLine("Senior Tutor Menu");
             Console.WriteLine("1. View Supervisors/Students Engagements");
@@ -240,19 +239,16 @@ class Program
             switch (input)
             {
                 case "1":
-                    ViewSummaryCommand(data);
+                    ViewSummaryCommand(data); // show a report of student engagement with the PS
                     break;
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("Invalid option  ");
+                    Console.WriteLine("Invalid option");
                     break;
             }
         }
     }
-
-
-
 
     static void CheckInCommand(SystemData data, string studentId, string message)
     {
@@ -265,7 +261,7 @@ class Program
 
         student.CheckIns.Add(new CheckIn
         {
-            Date = DateTime.Now,
+            Date = DateTime.Now, // save time of check-in
             Message = message
         });
 
@@ -274,7 +270,7 @@ class Program
 
     static void ViewStudentCommand(SystemData data, string studentId)
     {
-        var student = data.Students.Find(s => s.Id == studentId);
+        var student = data.Students.Find(s => s.Id == studentId); // try to look for the student
         if (student == null)
         {
             Console.WriteLine("Student not found.");
@@ -282,27 +278,28 @@ class Program
         }
 
         Console.WriteLine($"Name: {student.Name}");
+
         Console.WriteLine("Check-Ins:");
-        if (student.CheckIns.Count == 0)
+        if (student.CheckIns.Count == 0) // no check-ins saved
         {
             Console.WriteLine("- (none)");
         }
         else
         {
-            foreach (var checkIn in student.CheckIns)
+            foreach (var checkIn in student.CheckIns) // show all check-ins
             {
                 Console.WriteLine($"- [{checkIn.Date:yyyy-MM-dd}] {checkIn.Message}");
             }
         }
 
         Console.WriteLine("Meetings:");
-        if (student.Meetings.Count == 0)
+        if (student.Meetings.Count == 0) // no meetings to be shown
         {
             Console.WriteLine("- (none)");
         }
         else
         {
-            foreach (var meeting in student.Meetings)
+            foreach (var meeting in student.Meetings) // show all meetings
             {
                 Console.WriteLine($"- [{meeting.Date:yyyy-MM-dd HH:mm}] With: {meeting.With} | Notes: {meeting.Notes}");
             }
@@ -311,26 +308,27 @@ class Program
 
     static void RequestMeetingCommand(SystemData data, string studentId, string dateStr)
     {
-        var student = data.Students.Find(s => s.Id == studentId);
+        var student = data.Students.Find(s => s.Id == studentId); // find the student
         if (student == null)
         {
             Console.WriteLine("Student not found.");
             return;
         }
 
-        if (!DateTime.TryParse(dateStr, out DateTime meetingDate))
+        if (!DateTime.TryParse(dateStr, out DateTime meetingDate)) // check if the date entred is valid
         {
             Console.WriteLine("Invalid date format. Try something like: 2025-07-23 10:00");
             return;
         }
 
-        var supervisor = data.Supervisors.Find(ps => ps.Id == student.SupervisorId);
+        var supervisor = data.Supervisors.Find(ps => ps.Id == student.SupervisorId); // find the students persona'l s supervisor 
         if (supervisor == null)
         {
             Console.WriteLine("Supervisor not found.");
             return;
         }
 
+        // add meeting to student’s list and note that the meeting was requested by the student and not the pS
         student.Meetings.Add(new Meeting
         {
             Date = meetingDate,
@@ -341,29 +339,29 @@ class Program
         Console.WriteLine($"Meeting requested with {supervisor.Name} on {meetingDate:g}");
     }
 
-
     static void BookMeetingCommand(SystemData data, string studentId, string dateStr, string notes)
     {
-        var student = data.Students.Find(s => s.Id == studentId);
+        var student = data.Students.Find(s => s.Id == studentId); // find student
         if (student == null)
         {
             Console.WriteLine("Student not found.");
             return;
         }
 
-        if (!DateTime.TryParse(dateStr, out DateTime meetingDate))
+        if (!DateTime.TryParse(dateStr, out DateTime meetingDate)) // check if date is valid
         {
             Console.WriteLine("Invalid date format. Use something like: 2025-07-24 14:00");
             return;
         }
 
-        var supervisor = data.Supervisors.Find(ps => ps.Id == student.SupervisorId);
+        var supervisor = data.Supervisors.Find(ps => ps.Id == student.SupervisorId); // find their PS
         if (supervisor == null)
         {
             Console.WriteLine("Supervisor not found.");
             return;
         }
 
+        // add a new meeting entry with custom notes
         student.Meetings.Add(new Meeting
         {
             Date = meetingDate,
@@ -376,12 +374,12 @@ class Program
 
     static void ViewSummaryCommand(SystemData data)
     {
-        foreach (var ps in data.Supervisors)
+        foreach (var ps in data.Supervisors) // go through every supervisor
         {
-            var students = data.Students.FindAll(s => s.SupervisorId == ps.Id);
+            var students = data.Students.FindAll(s => s.SupervisorId == ps.Id); // get their studenst
             int total = students.Count;
-            int withCheckIns = students.Count(s => s.CheckIns.Any());
-            int withMeetings = students.Count(s => s.Meetings.Any());
+            int withCheckIns = students.Count(s => s.CheckIns.Any()); // students with at least one check-in
+            int withMeetings = students.Count(s => s.Meetings.Any()); // students with at least one meeting
 
             Console.WriteLine($"\nSupervisor: {ps.Name}");
             Console.WriteLine($"- Students assigned: {total}");
@@ -389,5 +387,5 @@ class Program
             Console.WriteLine($"- Students with meetings: {withMeetings}");
         }
     }
-
 }
+
