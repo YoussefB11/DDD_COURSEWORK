@@ -22,10 +22,10 @@ jobs:
       run: dotnet restore
       working-directory: DDD_COURSEWORK
 
-    - name: Build the project
+    - name: Build solution
       run: dotnet build --configuration Release
       working-directory: DDD_COURSEWORK
 
-    - name: Run tests
+    - name: Run unit tests
       run: dotnet test --no-build --verbosity normal
       working-directory: DDD_COURSEWORK
