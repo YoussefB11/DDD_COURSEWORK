@@ -1,31 +1,35 @@
 ﻿<Properties StartupConfiguration="{9BF384E3-FEC6-4378-8102-C06BE7E96590}|Default">
-  <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK.Tests FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/DDD_COURSEWORK.csproj">
     <Files>
-      <File FileName="DDD_COURSEWORK/Program.cs" Line="51" Column="41" />
-      <File FileName="DDD_COURSEWORK/Student.cs" Line="17" Column="1" />
-      <File FileName="DDD_COURSEWORK/CheckIn.cs" Line="5" Column="55" />
-      <File FileName="DDD_COURSEWORK/Meeting.cs" Line="9" Column="93" />
-      <File FileName="DDD_COURSEWORK/PersonalSupervisor.cs" Line="3" Column="32" />
-      <File FileName="DDD_COURSEWORK/SeniorTutor.cs" Line="3" Column="23" />
-      <File FileName="DDD_COURSEWORK/FileManager.cs" Line="14" Column="29" />
-      <File FileName="DDD_COURSEWORK/SystemData.cs" Line="14" Column="1" />
-      <File FileName="DDD_COURSEWORK/data.json" Line="23" Column="1" />
+      <File FileName="DDD_COURSEWORK/Program.cs" />
+      <File FileName="DDD_COURSEWORK/Student.cs" />
+      <File FileName="DDD_COURSEWORK/CheckIn.cs" />
+      <File FileName="DDD_COURSEWORK/Meeting.cs" />
+      <File FileName="DDD_COURSEWORK/PersonalSupervisor.cs" />
+      <File FileName="DDD_COURSEWORK/SeniorTutor.cs" />
+      <File FileName="DDD_COURSEWORK/FileManager.cs" />
+      <File FileName="DDD_COURSEWORK/SystemData.cs" />
+      <File FileName="DDD_COURSEWORK/data.json" />
+      <File FileName="DDD_COURSEWORK.Tests/Usings.cs" />
+      <File FileName="DDD_COURSEWORK.Tests/SampleTests.cs" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.316/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets" Line="153" Column="47" />
+      <File FileName="DDD_COURSEWORK/DDD_COURSEWORK.csproj" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DDD_COURSEWORK ">
-            <Node name="DDD_COURSEWORK">
-              <Node name="Program.cs" selected="True" />
-            </Node>
+          <Node name="DDD_COURSEWORK " expanded="True">
+            <Node name="DDD_COURSEWORK" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
