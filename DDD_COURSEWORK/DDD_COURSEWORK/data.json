@@ -1,4 +1,4 @@
-﻿{
+{
   "Students": [
     {
       "Id": "s001",
@@ -12,7 +12,9 @@
     {
       "Id": "ps001",
       "Name": "Peter Robinson",
-      "AssignedStudentIds": [ "s001" ]
+      "AssignedStudentIds": [
+        "s001"
+      ]
     }
   ],
   "SeniorTutor": {

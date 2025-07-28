@@ -6,7 +6,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 // This class handles saving and loading the system data from the JSON file
 public static class FileManager
 {
-    const string FilePath = "data.json"; // path to the data file
+    static readonly string FilePath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "data.json"); // path to the data file
 
     public static SystemData LoadData()
     {
