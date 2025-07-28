@@ -1,4 +1,5 @@
 ﻿<Properties StartupConfiguration="{9BF384E3-FEC6-4378-8102-C06BE7E96590}|Default">
+  <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK.Tests FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.DDD__COURSEWORK PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
