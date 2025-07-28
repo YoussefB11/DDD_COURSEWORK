@@ -6,23 +6,26 @@ on:
       - main
 
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout code
       uses: actions/checkout@v3
 
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '7.0.x'
 
-    - name: Restore Dependencies
+    - name: Restore dependencies
       run: dotnet restore
+      working-directory: DDD_COURSEWORK
 
-    - name: Build Project
+    - name: Build the project
       run: dotnet build --configuration Release
+      working-directory: DDD_COURSEWORK
 
-    - name: Run Tests
+    - name: Run tests
       run: dotnet test --no-build --verbosity normal
+      working-directory: DDD_COURSEWORK
