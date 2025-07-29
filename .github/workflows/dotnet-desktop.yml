@@ -21,7 +21,7 @@ jobs:
         dotnet-version: 7.0.x
 
     - name: Restore dependencies
-      run: dotnet restore ./DDD_COURSEWORK.sln
+      run: dotnet restore ./DDD_COURSEWORK/DDD_COURSEWORK.sln
 
     - name: Build
       run: dotnet build DDD_COURSEWORK.sln --no-restore
