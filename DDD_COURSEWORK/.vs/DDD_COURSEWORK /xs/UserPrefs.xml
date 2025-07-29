@@ -1,24 +1,23 @@
 ﻿<Properties StartupConfiguration="{9BF384E3-FEC6-4378-8102-C06BE7E96590}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DDD_COURSEWORK/DDD_COURSEWORK.csproj">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="DDD_COURSEWORK/Program.cs" />
       <File FileName="DDD_COURSEWORK/Student.cs" />
-      <File FileName="DDD_COURSEWORK/CheckIn.cs" />
+      <File FileName="DDD_COURSEWORK/CheckIn.cs" Line="12" Column="1" />
       <File FileName="DDD_COURSEWORK/Meeting.cs" />
       <File FileName="DDD_COURSEWORK/PersonalSupervisor.cs" />
       <File FileName="DDD_COURSEWORK/SeniorTutor.cs" />
       <File FileName="DDD_COURSEWORK/FileManager.cs" />
       <File FileName="DDD_COURSEWORK/SystemData.cs" />
       <File FileName="DDD_COURSEWORK/data.json" />
-      <File FileName="DDD_COURSEWORK.Tests/Usings.cs" />
-      <File FileName="DDD_COURSEWORK.Tests/SampleTests.cs" />
       <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.316/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets" Line="153" Column="47" />
       <File FileName="DDD_COURSEWORK/DDD_COURSEWORK.csproj" Line="1" Column="1" />
+      <File FileName="DDD_COURSEWORK .sln" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DDD_COURSEWORK " expanded="True">
+          <Node name="DDD_COURSEWORK ">
             <Node name="DDD_COURSEWORK" selected="True" />
           </Node>
         </State>
