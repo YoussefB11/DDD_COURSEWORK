@@ -10,7 +10,7 @@ using System.Linq;
 using DDD_COURSEWORK;
 
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
@@ -250,7 +250,7 @@ class Program
         }
     }
 
-    static void CheckInCommand(SystemData data, string studentId, string message)
+    public static void CheckInCommand(SystemData data, string studentId, string message)
     {
         var student = data.Students.Find(s => s.Id == studentId);
         if (student == null)
@@ -339,7 +339,7 @@ class Program
         Console.WriteLine($"Meeting requested with {supervisor.Name} on {meetingDate:g}");
     }
 
-    static void BookMeetingCommand(SystemData data, string studentId, string dateStr, string notes)
+    public static void BookMeetingCommand(SystemData data, string studentId, string dateStr, string notes)
     {
         var student = data.Students.Find(s => s.Id == studentId); // find student
         if (student == null)
