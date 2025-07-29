@@ -1,4 +1,4 @@
-name: CI PIPELINE
+name: CI Pipeline
 
 on:
   push:
@@ -20,10 +20,10 @@ jobs:
         dotnet-version: '7.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore DDD_COURSEWORK/DDD_COURSEWORK.csproj
+      run: dotnet restore DDD_COURSEWORK.csproj
 
     - name: Build solution
-      run: dotnet build DDD_COURSEWORK/DDD_COURSEWORK.csproj --no-restore
+      run: dotnet build DDD_COURSEWORK.csproj --no-restore
 
     - name: Run tests
       run: dotnet test DDD_COURSEWORK.Tests/DDD_COURSEWORK.Tests.csproj --no-build --verbosity normal
