@@ -1,31 +1,29 @@
-name: CI Pipeline
+name: CI PIPELINE
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  build_and_test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Setup .NET SDK
+    - name: Setup .NET 7
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '7.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
-      working-directory: DDD_COURSEWORK
+      run: dotnet restore DDD_COURSEWORK/DDD_COURSEWORK.csproj
 
     - name: Build solution
-      run: dotnet build --configuration Release
-      working-directory: DDD_COURSEWORK
+      run: dotnet build DDD_COURSEWORK/DDD_COURSEWORK.csproj --no-restore
 
-    - name: Run unit tests
-      run: dotnet test --no-build --verbosity normal
-      working-directory: DDD_COURSEWORK
+    - name: Run tests
+      run: dotnet test DDD_COURSEWORK.Tests/DDD_COURSEWORK.Tests.csproj --no-build --verbosity normal
