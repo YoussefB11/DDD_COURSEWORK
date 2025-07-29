@@ -268,7 +268,7 @@ public class Program
         Console.WriteLine($"Check-in submitted for {student.Name}");
     }
 
-    static void ViewStudentCommand(SystemData data, string studentId)
+    public static void ViewStudentCommand(SystemData data, string studentId)
     {
         var student = data.Students.Find(s => s.Id == studentId); // try to look for the student
         if (student == null)

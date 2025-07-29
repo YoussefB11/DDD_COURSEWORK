@@ -89,6 +89,32 @@ namespace DDD_COURSEWORK.Tests
             Assert.IsTrue(output.Contains("Invalid date format"));
         }
 
+        [TestMethod]
+        public void CheckInCommand_AddsCheckIn_ForValidStudent()
+        {
+            var student = new Student { Id = "s001", Name = "Youssef", SupervisorId = "ps001" };
+            var data = new SystemData();
+            data.Students.Add(student);
+
+            Program.CheckInCommand(data, "s001", "I'm doing okay.");
+
+            Assert.AreEqual(1, student.CheckIns.Count);
+            Assert.AreEqual("I'm doing okay.", student.CheckIns[0].Message);
+        }
+
+        [TestMethod]
+        public void ViewStudentCommand_InvalidStudent_PrintsNotFound()
+        {
+            var data = new SystemData();
+
+            using var sw = new StringWriter();
+            Console.SetOut(sw);
+
+            Program.ViewStudentCommand(data, "fake-id");
+
+            string output = sw.ToString();
+            Assert.IsTrue(output.Contains("Student not found."));
+        }
 
     }
     
